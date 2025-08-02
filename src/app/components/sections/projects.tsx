@@ -52,12 +52,7 @@ export const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                 ))}
               </div>
               
-              <a
-                href={project.link}
-                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 focus-outline"
-              >
-                View Project <ExternalLink size={16} className="ml-1" />
-              </a>
+             
             </div>
           ))}
         </div>

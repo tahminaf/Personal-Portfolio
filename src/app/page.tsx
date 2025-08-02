@@ -22,6 +22,10 @@ export default function PersonalWebsite() {
   const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
+    document.title = "Tahmina Fayezi";
+  }, []);
+
+  useEffect(() => {
     // Delay initial animations slightly for better effect
     const timer = setTimeout(() => {
       setIsVisible(true);

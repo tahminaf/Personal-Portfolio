@@ -26,7 +26,7 @@ export interface Project {
     },
     {
       title: "Conway’s Game of Life Simulation",
-      description: "Created a simulation of Conway’s Game of Life, showcasing cellular automation, which can evolve for up to 1,000 generations.",
+      description: "Created a simulation of Conway’s Game of Life, showcasing cellular automation, and evolve for up to 1,000 generations.",
       tech: ["C"],
       link: "#"
     }
