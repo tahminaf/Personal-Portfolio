@@ -1,0 +1,106 @@
+/* Global Styles and CSS Variables */
+:root {
+    /* Light Theme Colors */
+    --color-primary: #8b5cf6;
+    --color-primary-light: #a78bfa;
+    --color-secondary: #ec4899;
+    --color-secondary-light: #f472b6;
+    
+    /* Background Colors */
+    --bg-primary-light: #ffffff;
+    --bg-secondary-light: #f9fafb;
+    --bg-accent-light: #f3f4f6;
+    
+    /* Text Colors */
+    --text-primary-light: #111827;
+    --text-secondary-light: #6b7280;
+    --text-accent-light: #374151;
+    
+    /* Border Colors */
+    --border-light: #e5e7eb;
+    --border-accent-light: #d1d5db;
+  }
+  
+  [data-theme="dark"] {
+    /* Dark Theme Colors */
+    --bg-primary-dark: #111827;
+    --bg-secondary-dark: #1f2937;
+    --bg-accent-dark: #374151;
+    
+    /* Text Colors */
+    --text-primary-dark: #ffffff;
+    --text-secondary-dark: #d1d5db;
+    --text-accent-dark: #9ca3af;
+    
+    /* Border Colors */
+    --border-dark: #374151;
+    --border-accent-dark: #4b5563;
+  }
+  
+  /* Global Resets and Base Styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Utility Classes */
+  .gradient-text {
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  
+  /* Smooth Transitions */
+  .theme-transition {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  
+  /* Focus Styles for Accessibility */
+  .focus-outline:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Scroll Indicators */
+  .scroll-indicator {
+    position: relative;
+  }
+  
+  .scroll-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .scroll-indicator.active::after {
+    transform: scaleX(1);
+  }
