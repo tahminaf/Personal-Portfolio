@@ -8,7 +8,7 @@ import { Projects } from './components/sections/projects';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/layout/Footer';
 import { useTheme } from './hooks/useTheme';
-import { useScrollSpy } from './utils/scrollUtils';
+
 import { Experience } from './components/sections/experiences';
 
 // Import CSS files
@@ -20,7 +20,7 @@ export default function PersonalWebsite() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoaded, setIsLoaded] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
-
+  
   useEffect(() => {
     document.title = "Tahmina Fayezi";
   }, []);
@@ -35,10 +35,25 @@ export default function PersonalWebsite() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Set up scroll spy for active section tracking
   useEffect(() => {
-    const handleScroll = useScrollSpy(setActiveSection);
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

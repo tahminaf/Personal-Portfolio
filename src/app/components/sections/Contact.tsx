@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import { contactLinks } from '../../data/portfolioData';
@@ -18,14 +20,14 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-8 transition-all duration-1000 opacity-0 translate-y-10 animate-fade-in-up">
           <span className="gradient-text">
-            Let's Connect
+            Let&apos;s Connect
           </span>
         </h2>
         
         <p className={`text-xl mb-12 max-w-2xl mx-auto transition-all duration-1000 delay-200 opacity-0 translate-y-8 animate-fade-in-up ${
           isDarkMode ? 'text-gray-300' : 'text-gray-600'
         }`}>
-          I'd love to get to know you! Feel free to reach out ✨
+          I&apos;d love to get to know you! Feel free to reach out ✨
         </p>
         
         <div className="flex flex-wrap justify-center gap-6 mb-12">

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Code, ChevronDown } from 'lucide-react';
 import { scrollToSection } from '../../utils/scrollUtils';
@@ -32,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ isVisible, isLoaded, isDarkMode, set
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <span className="gradient-text">
-            Hey! I'm
+            Hey! I&apos;m
           </span>
           <br />
           <span className={isDarkMode ? 'text-white' : 'text-gray-900'}>{personalInfo.name}</span>

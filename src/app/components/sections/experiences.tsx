@@ -1,13 +1,35 @@
+'use client';
+
 import React from 'react';
-import { Briefcase, GraduationCap, Award, Calendar, MapPin, ExternalLink, ChevronRight } from 'lucide-react';
-import { skills, personalInfo} from '../../data/portfolioData';
+import { Briefcase, GraduationCap, Award, Calendar, MapPin, ChevronRight } from 'lucide-react';
 
 interface ExperiencesProps {
   isDarkMode: boolean;
 }
 
+interface ExperienceItem {
+  type: 'work' | 'education' | 'achievement';
+  title?: string;
+  degree?: string;
+  company?: string;
+  institution?: string;
+  organization?: string;
+  location: string;
+  period: string;
+  description: string;
+  achievements?: string[];
+  skills?: string[];
+  link?: string;
+}
+
+interface ExperienceCardProps {
+  item: ExperienceItem;
+  index: number;
+  animationDirection?: string;
+}
+
 export const Experience: React.FC<ExperiencesProps> = ({ isDarkMode }) => {
-    const experiences = [
+    const experiences: ExperienceItem[] = [
         {
           type: 'work',
           title: 'Software Engineering Intern',
@@ -26,7 +48,7 @@ export const Experience: React.FC<ExperiencesProps> = ({ isDarkMode }) => {
         
       ];
     
-      const education = [
+      const education: ExperienceItem[] = [
         {
           type: 'education',
           degree: 'Bachelor of Science in Computer Science',
@@ -42,7 +64,8 @@ export const Experience: React.FC<ExperiencesProps> = ({ isDarkMode }) => {
           link: '#'
         }
       ];
-      const coursework = [
+      
+      const coursework: ExperienceItem[] = [
         {
           type: 'work',
           title: 'Interview Prep Course',
@@ -60,10 +83,8 @@ export const Experience: React.FC<ExperiencesProps> = ({ isDarkMode }) => {
         },
         
       ];
-    
-       
 
-  const ExperienceCard = ({ item, index, animationDirection = 'left' }: any) => (
+  const ExperienceCard: React.FC<ExperienceCardProps> = ({ item, index }) => (
     <div
       className={`group bg-gradient-to-br rounded-2xl border p-6 transition-all duration-300 transform ${
         isDarkMode 
@@ -91,8 +112,6 @@ export const Experience: React.FC<ExperiencesProps> = ({ isDarkMode }) => {
             </p>
           </div>
         </div>
-        
-     
       </div>
 
       {/* Location and Period */}
@@ -179,56 +198,51 @@ export const Experience: React.FC<ExperiencesProps> = ({ isDarkMode }) => {
               />
             ))}
           </div>
-           {/* Education */}
-        <div className="mb-16">
-          <h3 className={`text-2xl md:text-3xl font-bold mb-8 transition-all duration-1000 delay-500 opacity-0 translate-y-8 animate-fade-in-up ${
-            isDarkMode ? 'text-white' : 'text-gray-900'
-          }`}>
-            <span className="flex items-center space-x-2">
-              <GraduationCap className="text-purple-400" size={28} />
-              <span>Education</span>
-            </span>
-          </h3>
-          <div className="space-y-8">
-            {education.map((edu, index) => (
-              <ExperienceCard 
-                key={`edu-${index}`} 
-                item={edu} 
-                index={index}
-                animationDirection="left"
-              />
-            ))}
-          </div>
 
+          {/* Education */}
           <div className="mb-16">
-          <h3 className={`text-2xl md:text-3xl font-bold mb-8 transition-all duration-1000 delay-500 opacity-0 translate-y-8 animate-fade-in-up ${
-            isDarkMode ? 'text-white' : 'text-gray-900'
-          }`}>
-            <span className="flex items-center space-x-2">
-              <GraduationCap className="text-purple-400" size={28} />
-              <span>Relevant Coursework</span>
-            </span>
-          </h3>
-          <div className="space-y-8">
-            {coursework.map((edu, index) => (
-              <ExperienceCard 
-                key={`edu-${index}`} 
-                item={edu} 
-                index={index}
-                animationDirection="left"
-              />
-            ))}
+            <h3 className={`text-2xl md:text-3xl font-bold mb-8 transition-all duration-1000 delay-500 opacity-0 translate-y-8 animate-fade-in-up ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>
+              <span className="flex items-center space-x-2">
+                <GraduationCap className="text-purple-400" size={28} />
+                <span>Education</span>
+              </span>
+            </h3>
+            <div className="space-y-8">
+              {education.map((edu, index) => (
+                <ExperienceCard 
+                  key={`edu-${index}`} 
+                  item={edu} 
+                  index={index}
+                  animationDirection="left"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Relevant Coursework */}
+          <div className="mb-16">
+            <h3 className={`text-2xl md:text-3xl font-bold mb-8 transition-all duration-1000 delay-500 opacity-0 translate-y-8 animate-fade-in-up ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>
+              <span className="flex items-center space-x-2">
+                <GraduationCap className="text-purple-400" size={28} />
+                <span>Relevant Coursework</span>
+              </span>
+            </h3>
+            <div className="space-y-8">
+              {coursework.map((edu, index) => (
+                <ExperienceCard 
+                  key={`coursework-${index}`} 
+                  item={edu} 
+                  index={index}
+                  animationDirection="left"
+                />
+              ))}
+            </div>
           </div>
         </div>
-        </div>
-        
-        </div>
-
-       
-
-      
-
-       
       </div>
     </section>
   );

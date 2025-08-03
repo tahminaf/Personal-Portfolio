@@ -1,5 +1,6 @@
+'use client';
+
 import React from 'react';
-import { Zap } from 'lucide-react';
 import { skills, personalInfo } from '../../data/portfolioData';
 
 interface AboutProps {
