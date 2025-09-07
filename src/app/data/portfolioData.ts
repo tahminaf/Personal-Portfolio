@@ -25,9 +25,9 @@ export interface Project {
       link: "#"
     },
     {
-      title: "Conway’s Game of Life Simulation",
-      description: "Created a simulation of Conway’s Game of Life, showcasing cellular automation, and evolve for up to 1,000 generations.",
-      tech: ["C"],
+      title: "StudySync",
+      description: "Created a study planner, similar to Notion, to organize my schedule. Not only was the schedule fully dynamic, but it can also allow me to track all of my classes!",
+      tech: ["React", "Next. JS", "Tailwind CSS"],
       link: "#"
     }
   ];

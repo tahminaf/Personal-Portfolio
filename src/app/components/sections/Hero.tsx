@@ -13,6 +13,11 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ isVisible, isLoaded, isDarkMode, setActiveSection }) => {
+  const handleResumeView = () => {
+    const resumeUrl = 'https://drive.google.com/file/d/1zJtxPu85N2N7uXTKHzYcfjfZISZI1U99/view?usp=sharing';
+    window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="home" className="relative z-10 min-h-screen flex items-center justify-center px-6">
       <div className={`text-center transition-all duration-1500 ease-out ${
@@ -59,9 +64,15 @@ export const Hero: React.FC<HeroProps> = ({ isVisible, isLoaded, isDarkMode, set
           </button>
           <button
             onClick={() => scrollToSection('contact', setActiveSection)}
-            className="px-8 py-4 border border-purple-500 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105 focus-outline"
+            className="px-8 py-4 gradient-bg rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 focus-outline"
           >
             Contact Me
+          </button>
+          <button
+            onClick={handleResumeView}
+            className="px-8 py-4 gradient-bg rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 focus-outline inline-flex items-center gap-2"
+          >
+            View My Resume
           </button>
         </div>
 
