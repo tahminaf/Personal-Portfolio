@@ -19,9 +19,9 @@ export interface Project {
       link: "https://github.com/tahminaf/Personal-Portfolio"
     },
     {
-      title: "Simple Calculator",
-      description: "Developed a simple calculator application capable of performing 5 basic operations addition, subtraction, multiplication, and division.",
-      tech: ["Java", "HTML", "CSS", "JavaScript"],
+      title: "Super Hero Catalog",
+      description: "Developed a full-stack web app to showcase over 2000 superhero movies, integrating search features for streamlined content discovery.",
+      tech: ['React', 'Spring Boot', 'Java', 'PostgreSQL', 'Javascript'],
       link: "#"
     },
     {
