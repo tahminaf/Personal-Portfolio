@@ -66,7 +66,7 @@ export interface Project {
     title: "CS @ University at Buffalo & Tech Lover",
     subtitle: "Learning more about my passion, one line of code at a time",
     aboutText: {
-      paragraph1: "I'm currently studying Computer Science as a University Honors College at UB with a concentration in software systems. I love coding, and I love to learn new things about the world of tech!",
+      paragraph1: "I'm currently studying Computer Science as a University Honors College student at UB with a concentration in software systems. I love coding, and I love to learn new things about the world of tech!",
       paragraph2: "When I'm not coding, I love reading, photography, and traveling!"
     
   }
