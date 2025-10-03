@@ -16,8 +16,8 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   };
 
   return (
-    <section id="contact" className="relative z-10 py-20 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="relative z-10 py-20 px-6 min-h-screen flex items-center">
+      <div className="max-w-4xl mx-auto text-center w-full">
         <h2 className="text-4xl md:text-5xl font-bold mb-8 transition-all duration-1000 opacity-0 translate-y-10 animate-fade-in-up">
           <span className="gradient-text">
             Let&apos;s Connect

@@ -23,6 +23,8 @@ export default function PersonalWebsite() {
   
   useEffect(() => {
     document.title = "Tahmina Fayezi";
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function PersonalWebsite() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+      const sections = ['home', 'about', 'experiences', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {

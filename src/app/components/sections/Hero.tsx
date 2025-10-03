@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ isVisible, isLoaded, isDarkMode, set
           </button>
           <button
             onClick={handleResumeView}
-            className="px-8 py-4 gradient-bg rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 focus-outline inline-flex items-center gap-2"
+            className="px-8 py-4 gradient-bg rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 focus-outline flex items-center justify-center gap-2"
           >
             View My Resume
           </button>

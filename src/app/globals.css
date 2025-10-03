@@ -23,5 +23,27 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Courier New', Courier, monospace;
+}
 
+/* Remove default blue outline from all interactive elements */
+button:focus,
+a:focus {
+  outline: none !important;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #8b5cf6 !important;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+
+*:focus {
+  outline: none !important;
+}
+
+*:focus-visible {
+  outline: 2px solid #8b5cf6 !important;
+  outline-offset: 2px;
 }
