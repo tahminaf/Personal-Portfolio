@@ -14,10 +14,11 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ isVisible, isLoaded, isDarkMode, setActiveSection }) => {
   const handleResumeView = () => {
-    const resumeUrl = 'https://drive.google.com/file/d/1zJtxPu85N2N7uXTKHzYcfjfZISZI1U99/view?usp=sharing';
+    //new resume update
+    const resumeUrl = 'https://drive.google.com/file/d/1cF8Xk21ccoHmJVh25pPD_8ZLKIx6Ju4u/view?usp=sharing';
     window.open(resumeUrl, '_blank', 'noopener,noreferrer');
   };
-
+ 
   return (
     <section id="home" className="relative z-10 min-h-screen flex items-center justify-center px-6">
       <div className={`text-center transition-all duration-1500 ease-out ${
