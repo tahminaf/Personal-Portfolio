@@ -3,6 +3,7 @@ export interface Project {
     description: string;
     tech: string[];
     link: string;
+    links?: { label: string; url: string }[]; // Optional array for multiple links
   }
   
   export interface ContactLink {
@@ -14,26 +15,30 @@ export interface Project {
   export const projects: Project[] = [
     {
       title: "EASE - Exercise App",
-      description: "This one's special - it won Best AI/ML Hack at UB Hacking 2025! I built it to help people with arthritis stay active. It uses your phone camera to watch your form while you exercise and gives you real-time feedback through voice. Think of it as your encouraging workout buddy that never gets tired!",
-      tech: ["React", "Node.js", "Express.js", "Firebase", "MediaPipe", "Gemini AI", "ElevenLabs", "Tailwind CSS", "Framer Motion"],
-      link: "https://github.com/mafruhamanal/ease"
+      description: "EASE - known as Enhanced Arthritis Support and Exercise, best known for winning the AI/ML track at UB Hacking 2025! Using computer vision, users can complete arthritis exercises with real-time form monitoring. There is also a RAG-based voice AI agent that allows users to navigate the website and learn all things arthritis!",
+      tech: ["React", "Node.js", "Express.js", "Firebase", "MediaPipe", "Gemini AI", "ElevenLabs", "Tailwind CSS"],
+      link: "https://devpost.com/software/eas-e",
+      links: [
+        { label: "View on Devpost", url: "https://devpost.com/software/eas-e" },
+        { label: "View on GitHub", url: "https://github.com/mafruhamanal/ease" }
+      ]
     },
     {
       title: "StudySync",
-      description: "I made this because I was drowning in sticky notes and random docs everywhere. Now I can keep all my study stuff - notes, tasks, schedules - in one place. It syncs across all my devices thanks to Firebase, so I can study anywhere without losing track of things.",
+      description: "StudySync - your all-in-one productivity platform for students, designed to eliminate the chaos of scattered notes and deadlines! This web app supports notes, tasks, and schedules across 5 content types with daily reminders and real-time search functionality. With Firebase powering the backend, your study life stays seamlessly synchronized across all devices!",
       tech: ["React", "TypeScript", "Next.js", "Firebase", "Tailwind CSS"],
       link: "https://github.com/tahminaf/StudySync"
     },
     {
       title: "Super Hero Catalog",
-      description: "Ever wanted to browse through thousands of superhero movies without getting lost? That's what this is for! You can rate your favorites, see what others think, and discover movies you might've missed. I built it with secure authentication so your superhero opinions stay yours.",
-      tech: ["React", "TypeScript", "Spring Boot", "Java", "PostgreSQL", "JWT"],
+      description: "Super Hero Catalog - a comprehensive full-stack application showcasing over 4000+ superhero films with dynamic search and rating capabilities! Users can rate their favorite movies, discover hidden gems, and explore a vast database of superhero content. Built with secure JWT authentication and bcrypt hashing to keep your superhero preferences safe and personalized!",
+      tech: ["React", "TypeScript", "Spring Boot", "Java", "PostgreSQL"],
       link: "#"
     },
     {
       title: "Personal Portfolio",
-      description: "You're looking at it right now! I wanted a clean, modern space to show what I've been working on. It's got smooth animations, dark mode (because who doesn't love dark mode?), and it's fully responsive. Built it from scratch and deployed on Vercel.",
-      tech: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+      description: "Personal Portfolio - the website you're exploring right now, built from scratch to showcase my projects and skills! Features smooth animations, full dark mode support, and a completely responsive design that looks great on any device. Deployed on Vercel with Next.js and Tailwind CSS for optimal performance and modern aesthetics!",
+      tech: ["React", "Next.js", "Tailwind CSS"],
       link: "https://github.com/tahminaf/Personal-Portfolio"
     }
   ];

@@ -151,16 +151,34 @@ export const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   )}
                 </div>
 
-                {project.link !== '#' && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-sm px-4 py-2 gradient-bg rounded-lg font-semibold text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105 focus-outline"
-                  >
-                    <span>View on GitHub</span>
-                    <Rocket size={14} />
-                  </a>
+                {/* Project Links */}
+                {project.links && project.links.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {project.links.map((linkItem) => (
+                      <a
+                        key={linkItem.url}
+                        href={linkItem.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center space-x-2 text-sm px-4 py-2 gradient-bg rounded-lg font-semibold text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105 focus-outline"
+                      >
+                        <span>{linkItem.label}</span>
+                        <Rocket size={14} />
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  project.link !== '#' && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-sm px-4 py-2 gradient-bg rounded-lg font-semibold text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105 focus-outline"
+                    >
+                      <span>View on GitHub</span>
+                      <Rocket size={14} />
+                    </a>
+                  )
                 )}
               </div>
             ))}
