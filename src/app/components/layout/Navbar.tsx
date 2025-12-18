@@ -44,11 +44,15 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}>
         <div className="max-w-12xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className={`text-2xl font-bold gradient-text transition-all duration-1000 delay-200 ${
-              isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-            }`}>
+            <button
+              onClick={() => handleNavClick('home')}
+              className={`text-2xl font-bold gradient-text transition-all duration-300 hover:scale-105 cursor-pointer focus-outline ${
+                isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+              }`}
+              style={{ transitionDelay: '200ms' }}
+            >
               {personalInfo.name}
-            </div>
+            </button>
             
             {/* Desktop Navigation */}
             <div className={`hidden md:flex space-x-8 items-center transition-all duration-1000 delay-300 ${

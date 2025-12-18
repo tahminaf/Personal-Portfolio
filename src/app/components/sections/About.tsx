@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { skills, personalInfo } from '../../data/portfolioData';
 
 interface AboutProps {
@@ -45,7 +46,7 @@ export const About: React.FC<AboutProps> = ({ isDarkMode }) => {
 
           <div className="relative transition-all duration-1000 delay-400 opacity-100 translate-x-0">
             <div className="text-center">
-              <img src="/purple.jpg" alt="picture of Tahmina Fayezi" className="w-full max-w-sm mx-auto rounded-lg" />
+              <Image src="/purple.jpg" alt="picture of Tahmina Fayezi" width={384} height={384} className="w-full max-w-sm mx-auto rounded-lg" />
             </div>
           </div>
         </div>
@@ -53,3 +54,4 @@ export const About: React.FC<AboutProps> = ({ isDarkMode }) => {
     </section>
   );
 };
+

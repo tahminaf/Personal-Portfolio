@@ -15,7 +15,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ isVisible, isLoaded, isDarkMode, setActiveSection }) => {
   const handleResumeView = () => {
     //new resume update
-    const resumeUrl = 'https://drive.google.com/file/d/1cF8Xk21ccoHmJVh25pPD_8ZLKIx6Ju4u/view?usp=sharing';
+    const resumeUrl = 'https://drive.google.com/file/d/1zJtxPu85N2N7uXTKHzYcfjfZISZI1U99/view?usp=sharing';
     window.open(resumeUrl, '_blank', 'noopener,noreferrer');
   };
  
